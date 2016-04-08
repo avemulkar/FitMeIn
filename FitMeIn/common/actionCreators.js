@@ -156,11 +156,9 @@ export const getCurrentWorkout = createAction(GET_CURRENT_WORKOUT, async () => {
 
   if (workoutArray === null) {
     //adding current workout for the first time
-    console.log('is null')
     await DB.currentWorkout.add({
       currentWorkout: InitialWorkout
     }).then((response) => {
-      console.log('then', response)
       currentWorkout = response.currentWorkout
     })
   } else {
