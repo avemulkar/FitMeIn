@@ -44,6 +44,7 @@ export default handleActions({
   },
 
   [GET_CURRENT_WORKOUT]: (state, action) => {
+    console.log('ACTION', action.payload);
     return {
       ...state,
       currentWorkout: action.payload

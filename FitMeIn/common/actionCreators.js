@@ -152,20 +152,21 @@ export const getCurrentStats = createAction(GET_CURRENT_STATS, async () => {
 export const getCurrentWorkout = createAction(GET_CURRENT_WORKOUT, async () => {
   let currentWorkout = [];
 
-  await DB.currentWorkout.find().then((resp) => {
-      if (resp === null) {
-        //adding current workout for the first time
-        DB.currentWorkout.add({
-          currentWorkout: InitialWorkout
-        }).then((response) => {
-          currentWorkout = response.currentWorkout
-        })
-      } else {
-        currentWorkout = resp[0].currentWorkout;
-      }
-    }).catch((error) => {
-      console.log(error)
-    });
+  const workoutArray = await DB.currentWorkout.find()
+
+  if (workoutArray === null) {
+    //adding current workout for the first time
+    console.log('is null')
+    await DB.currentWorkout.add({
+      currentWorkout: InitialWorkout
+    }).then((response) => {
+      console.log('then', response)
+      currentWorkout = response.currentWorkout
+    })
+  } else {
+    currentWorkout = workoutArray[0].currentWorkout;
+  }
+
   return currentWorkout
 });
 
@@ -438,7 +439,7 @@ export const finishWorkout = createAction(FINISH_WORKOUT, async () => {
         currArray.push({
           activityId: 6,
           activity: 'Lunges',
-          value: 0
+          value: 5
         })
       } else {
         currArray.push({

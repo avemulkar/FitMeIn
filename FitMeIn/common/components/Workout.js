@@ -36,6 +36,7 @@ class Workout extends Component {
   componentWillMount = () => {
     this.props.getIsWorkingOut();
     this.props.getCurrentWorkout();
+    console.log('on mount', this.props);
     var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.setState({
       dataSource: ds.cloneWithRows(this.props.currentWorkout)
@@ -43,6 +44,7 @@ class Workout extends Component {
   };
 
   componentWillReceiveProps = (nextProps) => {
+    console.log('next', nextProps)
     if (nextProps.fetchNewWorkout) {
       this.props.finishWorkout();
       this.props.setIsWorkingOut(false);
