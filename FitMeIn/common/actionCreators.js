@@ -461,7 +461,7 @@ export const finishWorkout = createAction(FINISH_WORKOUT, async () => {
 
 const getPushupScore = (value) => {
   if (value > 10 && value <= 20) {
-    return 'Healthy'
+    return 'Novice'
   } else if (value > 20 && value <= 30) {
     return 'Fit'
   } else if (value > 30 && value <= 40) {
@@ -475,7 +475,7 @@ const getPushupScore = (value) => {
 
 const getSitupScore = (value) => {
   if (value > 20 && value <= 30) {
-    return 'Healthy'
+    return 'Novice'
   } else if (value > 30 && value <= 40) {
     return 'Fit'
   } else if (value > 40 && value <= 50) {
@@ -489,7 +489,7 @@ const getSitupScore = (value) => {
 
 const getSquatScore = (value) => {
   if (value > 10 && value <= 20) {
-    return 'Healthy'
+    return 'Novice'
   } else if (value > 20 && value <= 30) {
     return 'Fit'
   } else if (value > 30 && value <= 40) {
@@ -503,7 +503,7 @@ const getSquatScore = (value) => {
 
 const getDipScore = (value) => {
   if (value > 10 && value <= 20) {
-    return 'Healthy'
+    return 'Novice'
   } else if (value > 20 && value <= 30) {
     return 'Fit'
   } else if (value > 30 && value <= 40) {
@@ -517,7 +517,7 @@ const getDipScore = (value) => {
 
 const getHipRaiseScore = (value) => {
   if (value > 15 && value <= 25) {
-    return 'Healthy'
+    return 'Novice'
   } else if (value > 25 && value <= 35) {
     return 'Fit'
   } else if (value > 35 && value <= 45) {
@@ -531,7 +531,7 @@ const getHipRaiseScore = (value) => {
 
 const getLungeScore = (value) => {
   if (value > 10 && value <= 20) {
-    return 'healthy'
+    return 'Novice'
   } else if (value > 20 && value <= 30) {
     return 'Fit'
   } else if (value > 30 && value <= 40) {

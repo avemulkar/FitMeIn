@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
 });
 
 const getScoreColor = (score) => {
-  if (score === 'Healthy') {
+  if (score === 'Novice') {
     return {
       color: 'orange'
     }
